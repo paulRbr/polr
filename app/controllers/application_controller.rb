@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
 
   def shorten
     full_url = params[:url]
+    custom_key = params[:custom_key]
+    options = custom_key.present? ? { custom_key: custom_key } : {}
 
-    render plain: full_url.present? ? short_url(full_url) : ""
+    render plain: full_url.present? ? short_url(full_url, options) : ""
   end
 end

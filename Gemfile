@@ -45,4 +45,4 @@ group :development do
   gem 'spring'
 end
 
-gem 'shortener'
+gem 'shortener', git: 'https://github.com/paulrbr/shortener.git', branch: 'develop'
