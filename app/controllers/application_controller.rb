@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
   def shorten
     full_url = params[:url]
     custom_key = params[:custom_key]
-    options = custom_key.present? ? { custom_key: custom_key } : {}
+    options = { url_options: Rails.application.routes.default_url_options }
+    options.merge!({ custom_key: custom_key }) if custom_key.present?
 
     render plain: full_url.present? ? short_url(full_url, options) : ""
   end
