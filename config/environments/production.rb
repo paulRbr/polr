@@ -1,4 +1,3 @@
-Rails.application.routes.default_url_options = { host: "polr.fr" }
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -77,4 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Not sure if this works
+  config.default_url_options = { host: "polr.fr" }
 end
+
+Rails.application.routes.default_url_options[:host] = "polr.fr"
